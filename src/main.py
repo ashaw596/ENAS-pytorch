@@ -109,8 +109,10 @@ def cnn_train(cnn, criterion, data_iter, max_batches, device, cnn_optimizer=None
 
 def main():
     load_path = None
-    # save_path = load_path + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    save_path = "./logs/new/" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+    load_path = "./logs/new/2018-06-08_21-16-41_2018-06-10_22-40-40"
+    save_path = load_path + "_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    # save_path = "./logs/new/" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     max_grad_norm = 200
     max_grad = 0.6

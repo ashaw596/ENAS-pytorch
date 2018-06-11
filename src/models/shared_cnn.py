@@ -30,8 +30,6 @@ class CNN(torch.nn.Module):
                  architecture=Architecture(final_filter_size=768 // 2, num_repeat_normal=6, num_modules=3)):
         super().__init__()
 
-        self.args = args
-
         self.height = height
         self.width = width
         self.output_classes = output_classes
@@ -101,7 +99,7 @@ class CNN(torch.nn.Module):
             torch.nn.init.constant_(self.out_layer.bias, 0)
             self.out_layer.to(self.gpu)
 
-        parent_counts = [0] * (2 + args.num_blocks)
+        parent_counts = [0] * (2 + num_cell_blocks)
 
         for idx, jdx, _type in self.all_connections:
             parent_counts[jdx] += 1

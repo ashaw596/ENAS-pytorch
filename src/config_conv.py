@@ -36,8 +36,4 @@ def get_args():
     hyperparameters mentioned in the paper.
     """
     args, unparsed = parser.parse_known_args()
-    if args.num_gpu > 0:
-        setattr(args, 'cuda', True)
-    else:
-        setattr(args, 'cuda', False)
     return args, unparsed
